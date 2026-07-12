@@ -37,7 +37,7 @@ body::before {
     opacity: 0.4;      /* Change this value */
     z-index: -1;
     background-position: left 200px;
-    background-size: contain;
+    background-size: cover;
 }
 
 
