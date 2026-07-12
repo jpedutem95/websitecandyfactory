@@ -25,13 +25,6 @@ body {
     background: #FEE0E9;
     color: #333;
     line-height: 1.5;
-
-    background-image: url("../images/candybanner.png");
-    background-repeat: no-repeat;
-    background-position: right 200px;
-    background-size: 950px auto;
-    background-attachment: fixed;
-    
 }
 
 body::before {
