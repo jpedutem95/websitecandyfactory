@@ -67,7 +67,8 @@ AboutUS
 
 #aboutUs h2,
 #ourStory h2,
-#careers h2 {
+#careers h2,
+#blogHero h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 30px;
@@ -75,7 +76,8 @@ AboutUS
 
 #aboutUs p,
 #ourStory p,
-#careers p {
+#careers p,
+#blogHero p {
     text-align: justify;
     line-height: 1.8;
     font-size: 18px;
@@ -87,4 +89,3 @@ AboutUS
     text-align: center;
     font-size: 1.5rem;
 }
-
