@@ -24,7 +24,7 @@ body {
     font-family: "Open Sans", sans-serif;
     background: #FEE0E9;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.5; 
 }
 
 body::before {
@@ -40,27 +40,15 @@ body::before {
     background-size: cover;
 }
 
+/* =====================
+AboutUS OurStory Careers
+======================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#aboutUs,
+#ourStory,
+#careers {
+    max-width: 900px;
+    margin: 60px auto;
+}
 
 
