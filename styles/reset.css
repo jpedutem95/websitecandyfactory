@@ -46,9 +46,11 @@ AboutUS OurStory Careers
 
 #aboutUs,
 #ourStory,
-#careers {
+#careers,
+#blogHero {
     max-width: 900px;
     margin: 60px auto;
 }
+
 
 
