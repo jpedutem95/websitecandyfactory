@@ -1,0 +1,54 @@
+
+/* ===============
+BUTTON 
+ ================= */
+ 
+
+ /* ===============
+ Shop Now BUTTON 
+ ================= */
+.shop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #FD3C82;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.shop-btn:hover {
+    background: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(253, 60, 130, 0.35);
+}
+
+
+
+ /* ==========================
+ Apple and Google App Download
+ ============================ */
+.store-buttons {
+    display: flex;
+    justify-content: center;   /* Centers horizontally */
+    align-items: center;       /* Centers vertically */
+    gap: 30px;
+    width: 100%;
+}
+
+
+.store-buttons a img {
+    width: 190px;
+    height: auto;
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.store-buttons a img:hover {
+    transform: scale(1.05);
+}
+
+

@@ -1,0 +1,498 @@
+
+/*
+
+font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+==========================
+Vertical Spacer 
+.spacer.v20 {
+    height: 20px
+}
+
+.spacer.v40 {
+    height: 40px;
+}
+
+.spacer.v80 {
+    height: 80px;
+}
+==========================
+
+==========================
+Adding Elements on new lines 
+.clear {
+    clear: both;
+}
+==========================
+
+ex. in html
+<div class="clear spacer v80"></div>
+<div class="spacer v80"></div>
+<div class="clear spacer v40"></div>
+<div class="spacer v20"></div>
+<div class="clear"></div>
+==========================
+
+-----------------------------------------------------------------------------------
+Here is a comprehensive list of the most useful text-related CSS properties.
+
+Property:	                What it does:	                    Example:
+font-family	                Sets the font	                    font-family: "Patrick Hand", cursive;
+font-size	                Sets text size	                 font-size: 20px;
+font-weight	                Thickness of text	              font-weight: bold; or 700
+font-style	                Normal or italic	                 font-style: italic;
+font-variant	            Small capitals	                    font-variant: small-caps;
+font-stretch	            Makes font wider/narrower          font-stretch: expanded;
+                            (supported by some fonts)	
+font	                    Shorthand for several               font: italic bold 20px/1.5 Arial;
+                            font properties 
+color	                    Text color	                       color: #333;
+line-height	                Space between lines	              line-height: 1.5;
+letter-spacing	            Space between letters	           letter-spacing: 2px;
+word-spacing	            Space between words	              word-spacing: 5px;
+text-align	                Horizontal alignment	           left, center, right, justify
+text-indent	               Indent first line	                 text-indent: 30px;
+text-transform	            Changes capitalization	           uppercase, lowercase, capitalize
+text-decoration	         Underline, overline, line-through	underline
+text-decoration-color	    Color of decoration	red
+text-decoration-style	    Style of underline	                dashed, wavy, double
+text-decoration-thickness	Thickness of underline	            2px
+text-shadow	                Shadow behind text	                2px 2px 5px gray;
+text-overflow	            Shows ... when text overflows	    ellipsis;
+white-space	                Controls wrapping	                nowrap, pre, normal
+overflow-wrap	            Breaks long words	                break-word;
+word-break	                Word breaking behavior	            break-all;
+direction	                Text direction	                    ltr, rtl
+writing-mode	            Vertical or horizontal text	        vertical-rl;
+vertical-align	            Vertical alignment	                middle;
+opacity	                    Text transparency	                0.5
+caret-color	                Cursor color in inputs	            blue
+user-select	                Allow selecting text	            none, text
+
+-----------------------------------------------------------------------------------
+Example using many properties
+p {
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #333333;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-shadow: 1px 1px 3px gray;
+
+    text-indent: 20px;
+}
+
+-----------------------------------------------------------------------------------
+Professional websites usually use
+
+These are the properties you'll see most often:
+
+font-family
+font-size
+font-weight
+font-style
+color
+line-height
+letter-spacing
+text-align
+text-transform
+text-decoration
+text-shadow
+white-space
+overflow-wrap
+text-overflow
+opacity
+
+These cover about 95% of text styling on modern websites.
+
+-----------------------------------------------------------------------------------
+Complete example
+p {
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    color: #333333;
+
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+
+    text-align: left;
+    text-indent: 20px;
+    text-transform: none;
+    text-decoration: none;
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,.2);
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    opacity: 1;
+}
+
+-----------------------------------------------------------------------------------
+here are well over 100 properties when you include typography, layout, effects, writing modes, and newer CSS specifications.
+
+Here's a much larger list.
+
+==========================
+   FONT
+==========================
+font
+font-family
+font-size
+font-size-adjust
+font-style
+font-weight
+font-stretch
+font-variant
+font-variant-alternates
+font-variant-caps
+font-variant-east-asian
+font-variant-emoji
+font-variant-ligatures
+font-variant-numeric
+font-variant-position
+font-feature-settings
+font-kerning
+font-language-override
+font-optical-sizing
+font-palette
+font-synthesis
+font-synthesis-style
+font-synthesis-weight
+font-synthesis-small-caps
+font-variation-settings
+
+==========================
+   COLOR
+==========================
+color
+opacity
+
+==========================
+   TEXT
+==========================
+text-align
+text-align-last
+text-justify
+text-indent
+text-transform
+text-shadow
+text-rendering
+text-overflow
+text-wrap
+text-wrap-mode
+text-wrap-style
+text-spacing-trim
+text-size-adjust
+text-emphasis
+text-emphasis-color
+text-emphasis-position
+text-emphasis-style
+text-decoration
+text-decoration-line
+text-decoration-color
+text-decoration-style
+text-decoration-thickness
+text-decoration-skip
+text-decoration-skip-ink
+text-underline-offset
+text-underline-position
+text-combine-upright
+text-orientation
+text-edge
+
+==========================
+   SPACING
+==========================
+letter-spacing
+word-spacing
+line-height
+tab-size
+white-space
+white-space-collapse
+white-space-trim
+overflow-wrap
+word-break
+line-break
+hyphens
+
+==========================
+   WRITING
+==========================
+direction
+writing-mode
+unicode-bidi
+
+==========================
+   SELECTION
+==========================
+caret-color
+accent-color
+user-select
+
+==========================
+   LISTS
+==========================
+list-style
+list-style-type
+list-style-position
+list-style-image
+marker-side
+
+==========================
+   QUOTES
+==========================
+quotes
+
+==========================
+   RUBY
+==========================
+ruby-align
+ruby-position
+ruby-overhang
+ruby-merge
+
+==========================
+   HANGING PUNCTUATION
+========================== 
+hanging-punctuation
+
+==========================
+   CURSOR
+==========================
+cursor
+
+==========================
+   VISIBILITY
+==========================
+visibility
+
+==========================
+   DISPLAY
+==========================
+display
+
+==========================
+   POSITION
+==========================
+position
+top
+right
+bottom
+left
+inset
+z-index
+
+==========================
+   BOX MODEL
+==========================
+width
+height
+min-width
+max-width
+min-height
+max-height
+
+margin
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+padding
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+box-sizing
+
+==========================
+   BORDER
+==========================
+border
+border-width
+border-style
+border-color
+
+border-top
+border-right
+border-bottom
+border-left
+
+border-radius
+
+outline
+outline-offset
+
+==========================
+   BACKGROUND
+==========================
+background
+background-color
+background-image
+background-repeat
+background-position
+background-size
+background-attachment
+background-origin
+background-clip
+background-blend-mode
+
+==========================
+   EFFECTS
+==========================
+box-shadow
+filter
+backdrop-filter
+mix-blend-mode
+
+==========================
+   TRANSFORMS
+==========================
+transform
+transform-origin
+transform-style
+perspective
+perspective-origin
+rotate
+scale
+translate
+
+==========================
+   TRANSITIONS
+==========================
+transition
+transition-property
+transition-duration
+transition-delay
+transition-timing-function
+
+==========================
+   ANIMATIONS
+==========================
+animation
+animation-name
+animation-duration
+animation-delay
+animation-direction
+animation-fill-mode
+animation-iteration-count
+animation-play-state
+animation-timing-function
+
+==========================
+   FLEXBOX
+==========================
+flex
+flex-grow
+flex-shrink
+flex-basis
+flex-direction
+flex-wrap
+justify-content
+align-items
+align-content
+align-self
+order
+gap
+row-gap
+column-gap
+
+==========================
+   GRID
+==========================
+grid
+grid-template
+grid-template-columns
+grid-template-rows
+grid-template-areas
+grid-column
+grid-row
+place-items
+place-content
+place-self
+
+==========================
+   OVERFLOW
+==========================
+overflow
+overflow-x
+overflow-y
+overflow-clip-margin
+scroll-behavior
+scroll-margin
+scroll-padding
+scroll-snap-align
+scroll-snap-stop
+scroll-snap-type
+
+==========================
+   OBJECT
+==========================
+object-fit
+object-position
+
+==========================
+   MASK
+==========================
+mask
+mask-image
+mask-size
+mask-repeat
+mask-position
+mask-origin
+mask-clip
+
+==========================
+   CLIPPING
+==========================
+clip
+clip-path
+
+==========================
+   COLUMNS
+==========================
+columns
+column-count
+column-gap
+column-width
+column-rule
+column-fill
+column-span
+
+==========================
+   CONTAINMENT
+==========================
+contain
+content-visibility
+container
+container-type
+container-name
+
+==========================
+   MISC
+========================== 
+appearance
+aspect-ratio
+isolation
+resize
+will-change
+pointer-events
+touch-action
+
+*/

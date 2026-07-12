@@ -1,0 +1,1456 @@
+<!--
+
+The <header> should contain the introductory content for your website or page. 
+    For most websites, it includes your branding and the primary navigation.
+
+A typical header contains:
+
+Logo or site name
+Primary navigation (<nav>)
+Optional: Search bar
+Optional: Sign in / Account link
+Optional: Shopping cart (for an online store)
+Optional: Call-to-action button (e.g., "Order Now")
+
+--------------------------------------------------------------------------
+The <main> element should contain the primary, unique content of the page. 
+    There should be only one <main> per page, and it should not contain content that is repeated across pages 
+        (such as the site header, navigation, or footer).
+
+Here are common elements that belong inside <main>:
+
+<h1> – The main heading of the page.
+<section> – Groups related content.
+<article> – Self-contained content (such as a blog post or news article).
+<aside> – Related content, such as a sidebar or tips.
+<figure> and <figcaption> – Images with captions.
+<form> – Contact forms, search forms, login forms, etc.
+<table> – Tabular data.
+Lists (<ul>, <ol>, <dl>).
+Paragraphs (<p>), images (<img>), videos (<video>), and other page-specific content.
+
+-----------------------------------------------------------------------
+
+The <footer> contains information that appears at the bottom of the page. 
+    It usually includes information about the website rather than the main content.
+
+Common things to put inside a <footer> include:
+
+Copyright notice
+Contact information
+Social media links
+Privacy Policy
+Terms of Service
+FAQ or Help links
+Sitemap
+Newsletter signup
+Back to top link
+Company address (if appropriate)
+
+<footer>
+    <p>&copy; 2026 Candy Factory. All rights reserved.</p>
+
+    <nav aria-label="Footer">
+        <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</footer>
+
+The aria-label attribute gives an accessible name to the <nav> element. 
+    It is mainly used by screen readers, 
+    which help people who are blind or have low vision navigate a website.
+    <nav aria-label="Primary"></nav>
+    <nav aria-label="Footer"></nav>
+    <button aria-label="Close menu">✕</button>
+
+-------------------------------------------------------------------------    
+Making your website accessible is a great habit. 
+Here are some of the most useful HTML features that help screen readers and improve accessibility.
+
+1. Use semantic HTML ⭐⭐⭐⭐⭐
+
+Instead of using <div> for everything, use meaningful elements.
+
+<header></header>
+<nav></nav>
+<main></main>
+<section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+
+Screen readers understand the purpose of these elements automatically.
+
+-----------------------------------------------------------------------------------
+
+2. aria-label
+
+Provides an accessible name.
+
+<nav aria-label="Primary Navigation">
+    ...
+</nav>
+<button aria-label="Close menu">
+    ✕
+</button>
+
+
+-----------------------------------------------------------------------------------
+3. alt for images ⭐⭐⭐⭐⭐
+
+Always describe informative images.
+
+<img src="logo.png" alt="Candy Factory logo">
+
+If an image is only decorative:
+
+<img src="decoration.png" alt="">
+
+An empty alt tells screen readers to ignore it.
+
+-----------------------------------------------------------------------------------
+
+4. Form labels ⭐⭐⭐⭐⭐
+
+Always associate labels with form controls.
+
+<label for="email">Email</label>
+<input id="email" type="email">
+
+Avoid relying only on placeholders.
+
+❌
+
+<input placeholder="Email">
+
+-----------------------------------------------------------------------------------
+5. Use headings in order
+
+Good:
+
+<h1>Welcome</h1>
+
+<h2>Products</h2>
+
+<h3>Chocolate</h3>
+
+<h2>About Us</h2>
+
+Avoid skipping levels without a reason.
+
+❌
+
+<h1>Welcome</h1>
+<h4>Products</h4>
+
+-----------------------------------------------------------------------------------
+6. <main>
+
+Only one per page.
+
+<main>
+
+</main>
+
+It lets screen readers jump directly to the main content.
+
+-----------------------------------------------------------------------------------
+
+7. Skip link ⭐⭐⭐⭐⭐
+
+Useful for keyboard users.
+
+<a href="#main-content" class="skip-link">
+    Skip to main content
+</a>
+
+<header>
+    ...
+</header>
+
+<main id="main-content">
+    ...
+</main>
+
+When someone presses Tab, they can skip the navigation.
+
+-----------------------------------------------------------------------------------
+
+8. aria-current
+
+Shows the current page.
+
+<nav aria-label="Primary">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="shop.html">Shop</a>
+</nav>
+
+Screen readers announce:
+
+Current page, Home
+
+-----------------------------------------------------------------------------------
+9. Buttons vs Links
+
+
+Use buttons for actions.
+
+<button>Open Menu</button>
+
+Use links for navigation.
+
+<a href="products.html">Products</a>
+
+-----------------------------------------------------------------------------------
+10. <figure> and <figcaption>
+<figure>
+    <img src="cake.jpg" alt="Chocolate cake">
+    <figcaption>Our best-selling cake.</figcaption>
+</figure>
+
+-----------------------------------------------------------------------------------
+11. Language
+<html lang="en">
+
+For a quote in another language:
+
+<p lang="es">Hola</p>
+
+-----------------------------------------------------------------------------------
+12. aria-hidden
+
+Hide decorative content from screen readers.
+
+<span aria-hidden="true">🍭</span>
+
+The candy emoji is ignored.
+
+-----------------------------------------------------------------------------------
+13. title
+
+Helpful for abbreviations.
+
+<abbr title="HyperText Markup Language">
+HTML
+</abbr>
+
+-----------------------------------------------------------------------------------
+14. Landmark elements
+
+These let assistive technologies quickly navigate the page.
+
+<header>
+<nav>
+<main>
+<aside>
+<footer>
+15. Tables
+
+Use headers.
+
+<table>
+    <caption>Candy Prices</caption>
+
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+
+    <tr>
+        <td>Lollipop</td>
+        <td>$2</td>
+    </tr>
+</table>
+
+-----------------------------------------------------------------------------------
+16. Fieldset
+
+Group related form controls.
+
+<fieldset>
+
+    <legend>Shipping Method</legend>
+
+    <label>
+        <input type="radio">
+        Standard
+    </label>
+
+    <label>
+        <input type="radio">
+        Express
+    </label>
+
+</fieldset>
+
+-----------------------------------------------------------------------------------
+17. Required fields
+<input
+    type="email"
+    required
+>
+
+Browsers and assistive technologies know it's required.
+
+-----------------------------------------------------------------------------------
+18. Navigation labels
+<nav aria-label="Primary Navigation">
+<nav aria-label="Footer Navigation">
+<nav aria-label="Breadcrumb">
+
+-----------------------------------------------------------------------------------
+19. Search landmark
+<form role="search">
+
+    <label for="search">
+        Search
+    </label>
+
+    <input
+        id="search"
+        type="search"
+    >
+
+</form>
+
+This identifies the form as a search feature.
+
+-----------------------------------------------------------------------------------
+20. Descriptive link text
+
+Good:
+
+<a href="products.html">
+    Browse our candy collection
+</a>
+
+Avoid:
+
+<a href="products.html">
+    Click here
+</a>
+
+The first example is more informative, especially when links are read out of context.
+
+Best practices checklist
+✅ Use semantic elements (<header>, <nav>, <main>, <footer>)
+✅ Provide alt text for informative images
+✅ Associate every form control with a <label>
+✅ Keep headings in a logical order (<h1> → <h2> → <h3>)
+✅ Use aria-label when an element needs a clearer accessible name
+✅ Use descriptive link text
+✅ Add a "Skip to main content" link
+✅ Use <button> for actions and <a> for navigation
+✅ Mark the current page with aria-current="page"
+✅ Use table headers (<th>) and captions for data tables
+
+Following these practices will make your website easier to navigate with screen readers, 
+keyboard navigation, and other assistive technologies while also improving the semantic quality of your HTML.
+
+-----------------------------------------------------------------------------------
+Besides accessibility, a high-quality website should also be fast, easy to use, secure, and understandable. 
+Here are the most important things to focus on.
+
+1. Accessibility ⭐⭐⭐⭐⭐
+
+Make your site usable by as many people as possible.
+
+Use semantic HTML (<header>, <main>, <footer>)
+Add alt text to informative images
+Label form fields
+Support keyboard navigation
+Ensure sufficient color contrast
+Use descriptive link text
+
+-----------------------------------------------------------------------------------
+2. Mobile responsiveness ⭐⭐⭐⭐⭐
+
+Your website should work well on phones, tablets, and desktops.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Use CSS techniques like Flexbox, Grid, and media queries to adapt the layout.
+
+-----------------------------------------------------------------------------------
+3. Fast loading ⭐⭐⭐⭐⭐
+
+People are more likely to stay if your site loads quickly.
+
+Some ways to improve speed:
+
+Compress images.
+Use modern image formats (such as WebP or AVIF when appropriate).
+Minify CSS and JavaScript.
+Load only the fonts you need.
+Use preconnect for external resources like Google Fonts.
+Enable browser caching on your server.
+
+-----------------------------------------------------------------------------------
+4. Clear navigation ⭐⭐⭐⭐⭐
+
+Visitors should be able to find what they need easily.
+
+<header>
+    <nav aria-label="Primary">
+        ...
+    </nav>
+</header>
+
+Keep navigation consistent across pages.
+
+-----------------------------------------------------------------------------------
+5. Readable content ⭐⭐⭐⭐⭐
+
+Make content easy to scan.
+
+Short paragraphs
+Clear headings
+Bullet lists where appropriate
+Good spacing
+Readable font sizes (commonly at least 16px for body text)
+
+-----------------------------------------------------------------------------------
+6. Meaningful page titles ⭐⭐⭐⭐⭐
+
+Each page should have a descriptive <title>.
+
+<title>Candy Factory | Chocolate Collection</title>
+
+This helps users and search engines identify the page.
+
+-----------------------------------------------------------------------------------
+7. Meta description
+
+Although it doesn't directly affect rankings, it can influence whether people click your page in search results.
+
+<meta name="description"
+      content="Shop handmade chocolates, gummies, and candy gifts.">
+
+
+-----------------------------------------------------------------------------------     
+8. Good forms
+
+Forms should be easy to complete.
+
+Label every field
+Show helpful validation messages
+Mark required fields clearly
+Don't ask for unnecessary information
+
+-----------------------------------------------------------------------------------
+9. HTTPS ⭐⭐⭐⭐⭐
+
+Always serve your site over HTTPS so data is encrypted.
+
+-----------------------------------------------------------------------------------
+10. Consistent design
+
+Use the same:
+
+Colors
+Typography
+Buttons
+Spacing
+Layout patterns
+
+Consistency helps users learn your interface.
+
+-----------------------------------------------------------------------------------
+11. Good error messages
+
+Instead of:
+
+Error
+
+Use:
+
+Please enter a valid email address.
+
+This tells the user what needs to be fixed.
+
+-----------------------------------------------------------------------------------
+12. Search (if your site is large)
+
+If you have many products or articles, include a search feature.
+
+-----------------------------------------------------------------------------------
+13. Contact information
+
+Help users reach you easily.
+
+<footer>
+    Email
+    Phone
+    Address
+</footer>
+
+-----------------------------------------------------------------------------------
+14. Social proof
+
+For businesses, consider including:
+
+Customer reviews
+Ratings
+Testimonials
+
+These can help visitors feel more confident.
+
+-----------------------------------------------------------------------------------
+15. Clear calls to action
+
+Examples:
+
+Shop Now
+Contact Us
+Learn More
+Add to Cart
+
+Users should always know the next step.
+
+-----------------------------------------------------------------------------------
+16. Images
+Use high-quality images.
+Optimize them for the web.
+Include meaningful alt text for informative images.
+
+-----------------------------------------------------------------------------------
+17. Keyboard accessibility ⭐⭐⭐⭐⭐
+
+Every interactive element should be usable with the keyboard.
+
+Users should be able to:
+
+Press Tab to move through links and controls.
+See a visible focus indicator.
+Activate controls with Enter or Space, depending on the element.
+
+-----------------------------------------------------------------------------------
+18. Proper HTML structure
+
+A common page layout is:
+
+<body>
+
+<header>
+</header>
+
+<main>
+</main>
+
+<footer>
+</footer>
+
+</body>
+
+This structure is easy for browsers and assistive technologies to understand.
+
+
+-----------------------------------------------------------------------------------
+19. Favicon
+
+Include a favicon so your site is recognizable in browser tabs.
+
+<link rel="icon" href="favicon.png">
+
+-----------------------------------------------------------------------------------
+20. Helpful footer
+
+A footer often includes:
+
+Copyright
+Privacy Policy
+Terms of Service
+Contact information
+Social media links
+Priority checklist
+
+If you're building your first website, these are the highest priorities:
+
+⭐ Semantic HTML (<header>, <nav>, <main>, <footer>)
+⭐ Mobile-friendly design
+⭐ Fast loading
+⭐ Accessible forms and images
+⭐ Clear navigation
+⭐ Descriptive page titles and headings
+⭐ HTTPS
+⭐ Keyboard accessibility
+⭐ Good color contrast
+⭐ Consistent layout and styling
+
+If you consistently follow these practices, you'll create a website that's easier to use for a wide range of visitors, 
+including people using assistive technologies, mobile devices, and different browsers.
+
+-----------------------------------------------------------------------------------
+Here are additional features that make a website more user-friendly and professional.
+
+1. Custom 404 page ⭐⭐⭐⭐⭐
+
+If someone visits a broken link, don't show a generic error page.
+
+Instead, create a helpful page like:
+
+Oops! We couldn't find that page.
+
+[Go to Home]
+[Browse Products]
+
+-----------------------------------------------------------------------------------
+2. Loading feedback ⭐⭐⭐⭐⭐
+
+If something takes time to load, show that work is happening.
+
+Examples:
+
+Loading spinner
+Skeleton placeholders
+Progress bar
+
+This reassures users that the page hasn't frozen.
+
+-----------------------------------------------------------------------------------
+3. Success messages
+
+When a user completes an action, confirm it.
+
+Examples:
+
+✅ "Your order has been placed."
+✅ "Your message has been sent."
+✅ "Password updated successfully."
+
+-----------------------------------------------------------------------------------
+4. Helpful error messages ⭐⭐⭐⭐⭐
+
+Instead of:
+
+Invalid input
+
+Use:
+
+Please enter a valid email address.
+
+Good error messages explain what went wrong and how to fix it.
+
+-----------------------------------------------------------------------------------
+5. Confirm destructive actions
+
+Ask for confirmation before actions that can't easily be undone.
+
+Examples:
+
+Delete account
+Remove item
+Cancel order
+
+
+-----------------------------------------------------------------------------------
+6. Search (for larger sites)
+
+If your website has many pages or products, a search feature can save users time.
+
+
+-----------------------------------------------------------------------------------
+7. Breadcrumbs
+
+They help users understand where they are.
+
+Example:
+
+Home > Candy > Chocolate > Dark Chocolate
+
+
+-----------------------------------------------------------------------------------
+8. Consistent navigation ⭐⭐⭐⭐⭐
+
+Keep menus in the same place on every page.
+
+Changing navigation from page to page can confuse visitors.
+
+
+-----------------------------------------------------------------------------------
+9. Readable typography ⭐⭐⭐⭐⭐
+Comfortable font size
+Good line spacing
+Clear contrast
+Avoid long lines of text
+
+Example CSS:
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+-----------------------------------------------------------------------------------
+10. Large tap targets
+
+Buttons and links should be easy to click or tap, especially on mobile devices.
+
+
+-----------------------------------------------------------------------------------
+11. Visible keyboard focus ⭐⭐⭐⭐⭐
+
+When someone presses Tab, they should be able to see which element is selected.
+
+Example:
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid blue;
+}
+
+-----------------------------------------------------------------------------------
+12. Don't autoplay media
+
+Avoid automatically playing audio or video. Let users decide when to start playback.
+
+-----------------------------------------------------------------------------------
+13. Keep navigation simple
+
+Instead of showing dozens of menu items, group related pages logically.
+
+-----------------------------------------------------------------------------------
+14. Use whitespace
+
+Leave enough space between sections and elements.
+
+Crowded pages are harder to read and interact with.
+
+
+-----------------------------------------------------------------------------------
+15. Show users where they are
+
+Highlight the current page in the navigation.
+
+<a href="products.html" aria-current="page">Products</a>
+
+-----------------------------------------------------------------------------------
+16. Make contact information easy to find
+
+Users shouldn't have to search for how to contact you.
+
+
+-----------------------------------------------------------------------------------
+17. Display prices clearly
+
+For an online store:
+
+Show the currency.
+Show shipping costs before checkout when possible.
+Avoid hidden fees.
+
+
+-----------------------------------------------------------------------------------
+18. Optimize images
+
+Large images slow down websites.
+
+Use:
+
+Appropriate image dimensions
+Compression
+Modern formats when suitable
+
+
+-----------------------------------------------------------------------------------
+19. Browser compatibility
+
+Test your website in multiple browsers and on different screen sizes to catch layout or functionality issues.
+
+
+-----------------------------------------------------------------------------------
+20. Avoid overwhelming users
+
+Don't put everything on one page.
+
+Use clear sections and headings.
+
+
+-----------------------------------------------------------------------------------
+21. Respect user preferences
+
+Some users prefer reduced motion or dark mode. CSS media queries can help you adapt your site, for example:
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+    }
+}
+
+
+-----------------------------------------------------------------------------------
+22. Use meaningful button text
+
+Instead of:
+
+Submit
+
+Use:
+
+Send Message
+
+Instead of:
+
+Click Here
+
+Use:
+
+View Products
+
+Specific labels make it clearer what will happen.
+
+
+-----------------------------------------------------------------------------------
+23. Keep forms short
+
+Only ask for information you actually need. Shorter forms are generally easier to complete.
+
+
+-----------------------------------------------------------------------------------
+24. Test with real users
+
+Watching someone else use your site can reveal confusing navigation, unclear wording, 
+or difficult tasks that are easy to miss when you're the developer.
+
+
+-----------------------------------------------------------------------------------
+25. Performance monitoring
+
+After launching your site, use tools to measure and improve performance and accessibility. 
+For example, browser developer tools and audits can help identify slow resources, accessibility issues, 
+and best practice improvements.
+
+Top 10 priorities for a user-friendly website
+
+If you focus on these first, you'll build a strong foundation:
+
+✅ Semantic HTML
+✅ Responsive design
+✅ Fast loading
+✅ Accessible forms and images
+✅ Clear, consistent navigation
+✅ Good color contrast and readable typography
+✅ Keyboard accessibility
+✅ Helpful error and success messages
+✅ Logical page structure with clear headings
+✅ Optimized images and other assets
+
+These practices improve the experience for nearly everyone, whether they're using a phone, 
+a desktop computer, a keyboard instead of a mouse, or assistive technologies.
+
+
+-----------------------------------------------------------------------------------
+Once you've covered the essentials (HTML structure, accessibility, responsive design, performance, security, 
+and usability), there are many nice-to-have features that make a website feel more polished and professional.
+
+User experience
+⭐ Back to Top button on long pages.
+⭐ Dark mode or light/dark theme switch.
+⭐ Smooth scrolling for in-page links.
+⭐ Sticky navigation that stays visible while scrolling.
+⭐ Reading progress bar for long articles.
+⭐ Print-friendly styles for pages users may want to print.
+
+-----------------------------------------------------------------------------------
+Performance
+Lazy-load images that are below the fold:
+<img src="cake.jpg" alt="Chocolate cake" loading="lazy">
+Defer non-critical JavaScript:
+<script src="script.js" defer></script>
+Preload important resources (only when appropriate):
+<link rel="preload" href="hero.webp" as="image">
+
+-----------------------------------------------------------------------------------
+Accessibility
+Add a skip to main content link.
+Use aria-current="page" for the active navigation item.
+Ensure modals and menus trap keyboard focus correctly.
+Respect the user's reduced-motion preference.
+
+-----------------------------------------------------------------------------------
+SEO
+Use canonical URLs to identify the preferred version of a page:
+<link rel="canonical" href="https://example.com/products">
+Create an XML sitemap.
+Add a robots.txt file.
+Use structured data (Schema.org) where appropriate.
+Social sharing
+
+Add metadata so links look better when shared.
+
+Example:
+
+<meta property="og:title" content="Candy Factory">
+<meta property="og:description" content="Delicious handmade candy.">
+
+This helps create attractive previews on many social platforms.
+
+-----------------------------------------------------------------------------------
+Forms
+Show password strength.
+Allow users to show/hide passwords.
+Save form input if validation fails.
+Provide autocomplete where appropriate:
+<input type="email" autocomplete="email">
+
+-----------------------------------------------------------------------------------
+E-commerce
+Wishlist
+Product comparison
+Customer reviews
+Related products
+Stock availability
+Estimated delivery date
+
+-----------------------------------------------------------------------------------
+Professional touches
+Custom loading animation (kept subtle).
+Well-designed empty states, such as "No products found."
+Friendly error pages (404, 500).
+Consistent icons.
+Favicon and app icons for different devices.
+
+-----------------------------------------------------------------------------------
+Developer quality
+Organize files clearly:
+project/
+│
+├── css/
+├── js/
+├── images/
+├── fonts/
+├── pages/
+└── index.html
+Use meaningful file names.
+Keep code consistently formatted and commented where it adds value.
+Validate your HTML and CSS during development.
+
+-----------------------------------------------------------------------------------
+Analytics and monitoring
+
+If your website is public, consider adding:
+
+Visitor analytics
+Error logging
+Performance monitoring
+
+These help you understand how people use your site and identify problems.
+
+-----------------------------------------------------------------------------------
+Browser support
+
+Test your site in multiple browsers and on different devices to ensure a consistent experience.
+
+-----------------------------------------------------------------------------------
+Content quality
+Avoid spelling and grammar mistakes.
+Keep information up to date.
+Use consistent terminology throughout the site.
+
+-----------------------------------------------------------------------------------
+A polished footer
+
+Include useful links such as:
+
+Contact
+Privacy Policy
+Terms of Service
+Accessibility statement (if applicable)
+Copyright notice
+
+-----------------------------------------------------------------------------------
+Final checklist
+
+If your website has all of these, it's approaching professional quality:
+
+Essential
+✅ Semantic HTML
+✅ Accessibility
+✅ Responsive design
+✅ Fast loading
+✅ HTTPS
+✅ Clear navigation
+✅ Good typography
+✅ Optimized images
+✅ Keyboard accessibility
+✅ Helpful forms and messages
+
+-----------------------------------------------------------------------------------
+Professional extras
+✅ Favicon
+✅ Meta description
+✅ Open Graph metadata
+✅ Canonical URL
+✅ XML sitemap
+✅ Custom 404 page
+✅ Lazy-loaded images
+✅ defer for JavaScript when appropriate
+✅ Print styles
+✅ Dark mode (optional)
+✅ Smooth scrolling (optional)
+✅ Back-to-top button (optional)
+✅ Analytics and monitoring
+✅ Organized project structure
+✅ Cross-browser testing
+
+These aren't all required for every project, 
+but adding them thoughtfully can make your website feel more polished and maintainable.
+
+-----------------------------------------------------------------------------------
+There are many additional practices used on professional websites. 
+Some are niche, but together they can make a site feel polished, reliable, and easier to maintain.
+
+HTML and semantics
+✅ Only one <h1> per page (recommended in most cases for clarity, though HTML5 technically allows more in certain contexts).
+✅ Use <section> only when the content has its own heading.
+✅ Use <article> for self-contained content like blog posts or news items.
+✅ Use <time> for dates.
+✅ Use <address> for contact information.
+✅ Use <figure> and <figcaption> for images with captions.
+✅ Use <details> and <summary> for FAQs or expandable content.
+
+Example:
+
+<details>
+    <summary>What is your return policy?</summary>
+    <p>Returns are accepted within 30 days.</p>
+</details>
+
+
+-----------------------------------------------------------------------------------
+Images
+Specify width and height on images to reduce layout shifts.
+<img
+    src="cake.webp"
+    alt="Chocolate cake"
+    width="400"
+    height="300">
+Use responsive images with srcset and sizes when appropriate.
+
+
+-----------------------------------------------------------------------------------
+Forms
+Use the correct input type:
+<input type="email">
+<input type="tel">
+<input type="date">
+<input type="number">
+
+This improves usability, especially on mobile devices.
+
+Use autocomplete where appropriate:
+<input autocomplete="given-name">
+<input autocomplete="family-name">
+<input autocomplete="email">
+
+-----------------------------------------------------------------------------------
+Navigation
+Add breadcrumbs on larger websites.
+Keep navigation depth reasonable so users don't have to click through many levels.
+CSS
+Respect users who prefer reduced motion:
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+    }
+}
+Respect dark mode if you support it:
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles */
+}
+
+-----------------------------------------------------------------------------------
+Security
+Validate all user input on the server.
+Escape user-generated content before displaying it.
+Use strong passwords for admin accounts.
+Keep software and libraries up to date.
+
+-----------------------------------------------------------------------------------
+SEO
+Give every page a unique <title>.
+Give every page a unique meta description.
+Use descriptive URLs.
+
+Good:
+
+/products/chocolate-bars
+
+Less descriptive:
+
+/page?id=123
+
+-----------------------------------------------------------------------------------
+Content
+Show the date an article was published or updated when relevant.
+Include author information where appropriate.
+Keep content current.
+
+-----------------------------------------------------------------------------------
+Accessibility
+Don't rely on color alone to convey information.
+
+Instead of:
+
+🔴 Required fields are red.
+
+Use:
+
+* Required
+
+or an icon with accompanying text.
+
+
+-----------------------------------------------------------------------------------
+Error handling
+
+If a search returns no results, help the user recover.
+
+Example:
+
+No products matched your search.
+
+Try:
+• Checking the spelling
+• Using fewer keywords
+• Browsing all products
+
+-----------------------------------------------------------------------------------
+Performance
+Reduce unnecessary HTTP requests.
+Remove unused CSS and JavaScript.
+Compress text responses with your web server (for example, using Gzip or Brotli).
+
+-----------------------------------------------------------------------------------
+Trust
+
+Professional websites often include:
+
+About page
+Contact page
+Privacy Policy
+Terms of Service
+Return policy (for stores)
+Frequently Asked Questions (FAQ)
+
+-----------------------------------------------------------------------------------
+Maintainability
+Use consistent naming conventions.
+Organize CSS logically.
+Avoid duplicate code.
+Use version control (such as Git).
+
+-----------------------------------------------------------------------------------
+Testing
+
+Before publishing, test:
+
+Keyboard navigation
+Mobile devices
+Multiple browsers
+Different screen sizes
+Slow internet connections
+
+-----------------------------------------------------------------------------------
+User experience
+
+Small touches that improve the experience:
+
+Remember user preferences (such as language or theme) if appropriate.
+Show clear feedback after actions.
+Prevent accidental duplicate form submissions.
+Make buttons and links feel responsive.
+
+-----------------------------------------------------------------------------------
+A professional developer's checklist
+
+Many teams review websites using categories like these:
+
+HTML validity – Correct, semantic markup.
+Accessibility – Usable with assistive technologies and keyboard navigation.
+Performance – Fast loading and efficient resource usage.
+Responsive design – Works across screen sizes.
+SEO basics – Good titles, descriptions, and page structure.
+Security – Safe handling of user data and modern HTTPS practices.
+Usability – Clear navigation, readable content, helpful feedback.
+Maintainability – Clean code, organization, and documentation.
+Reliability – Works consistently across browsers and conditions.
+
+In practice, experienced developers often use these categories as a mental checklist 
+rather than trying to remember dozens of individual techniques. Mastering these areas will prepare you 
+to build websites that are not only functional, but also professional and pleasant to use.
+
+
+-----------------------------------------------------------------------------------
+If your goal is to build professional-quality websites, there are a handful of concepts that are especially valuable to learn. They go beyond individual HTML tags and help you make better design and development decisions.
+
+1. Write semantic HTML ⭐⭐⭐⭐⭐
+
+Don't use <div> for everything. Use elements that describe the content:
+
+<header>
+<nav>
+<main>
+<section>
+<article>
+<footer>
+
+This improves accessibility, SEO, and code readability.
+
+-----------------------------------------------------------------------------------
+2. Separate HTML, CSS, and JavaScript ⭐⭐⭐⭐⭐
+HTML → Structure
+CSS → Appearance
+JavaScript → Behavior
+
+Avoid inline styles and inline JavaScript when possible.
+
+
+-----------------------------------------------------------------------------------
+3. Mobile-first design ⭐⭐⭐⭐⭐
+
+Many visitors will use a phone. Start by designing for small screens, then enhance the layout for larger screens.
+
+
+-----------------------------------------------------------------------------------
+4. Accessibility is part of good design ⭐⭐⭐⭐⭐
+
+Don't treat accessibility as an afterthought.
+
+Ask yourself:
+
+Can someone use the site with only a keyboard?
+Can someone using a screen reader understand it?
+Is the text easy to read?
+Is the color contrast sufficient?
+
+
+-----------------------------------------------------------------------------------
+5. Keep it simple ⭐⭐⭐⭐⭐
+
+A simple, consistent interface is often better than one with many animations and effects.
+
+
+-----------------------------------------------------------------------------------
+6. Learn the browser developer tools ⭐⭐⭐⭐⭐
+
+Every modern browser has built-in developer tools that let you:
+
+Inspect HTML and CSS
+Debug JavaScript
+Check network requests
+Measure performance
+Audit accessibility
+
+These tools are invaluable for troubleshooting.
+
+
+-----------------------------------------------------------------------------------
+7. Validate your code
+
+Use validators to catch mistakes.
+
+Useful tools include:
+
+HTML validator
+CSS validator
+Accessibility checkers
+Browser developer tools
+
+
+-----------------------------------------------------------------------------------
+8. Optimize images ⭐⭐⭐⭐⭐
+
+Large images are one of the biggest causes of slow websites.
+
+Choose appropriate dimensions, compress images, and use modern formats when suitable.
+
+
+-----------------------------------------------------------------------------------
+9. Learn CSS layout well ⭐⭐⭐⭐⭐
+
+Master these concepts:
+
+Flexbox
+CSS Grid
+Positioning
+Responsive units
+Media queries
+
+Strong CSS skills make building layouts much easier.
+
+
+-----------------------------------------------------------------------------------
+10. Understand the box model ⭐⭐⭐⭐⭐
+
+Every element has:
+
+Margin
+Border
+Padding
+Content
+
+Many layout issues become easier to solve once you understand this model.
+
+
+-----------------------------------------------------------------------------------
+11. Use version control ⭐⭐⭐⭐⭐
+
+Learn Git early.
+
+It lets you:
+
+Track changes
+Revert mistakes
+Collaborate with others
+Maintain a history of your work
+
+
+-----------------------------------------------------------------------------------
+12. Test before publishing
+
+Check:
+
+Different browsers
+Mobile and desktop
+Keyboard navigation
+Broken links
+Forms
+Slow internet connections
+
+
+-----------------------------------------------------------------------------------
+13. Organize your project
+
+Example:
+
+project/
+│
+├── index.html
+├── about.html
+├── products.html
+│
+├── styles/
+│   └── style.css
+│
+├── scripts/
+│   └── script.js
+│
+├── images/
+│
+├── fonts/
+│
+└── favicon/
+
+A clear structure makes projects easier to maintain.
+
+
+-----------------------------------------------------------------------------------
+14. Name things clearly
+
+Instead of:
+
+.red
+.box1
+.div2
+
+Prefer:
+
+.product-card
+.navigation
+.footer-links
+
+Descriptive names make code easier to understand.
+
+
+-----------------------------------------------------------------------------------
+15. Performance matters
+
+Small improvements add up:
+
+Optimize images
+Load only necessary fonts
+Minimize unnecessary CSS and JavaScript
+Use caching where appropriate
+
+
+-----------------------------------------------------------------------------------
+16. Security basics
+
+Even simple websites should:
+
+Use HTTPS
+Validate user input
+Avoid exposing sensitive information
+Keep dependencies up to date
+
+
+-----------------------------------------------------------------------------------
+17. Think from the user's perspective ⭐⭐⭐⭐⭐
+
+Before adding a feature, ask:
+
+Is it useful?
+Is it easy to understand?
+Is it easy to find?
+Is it easy to use?
+
+Good websites solve users' problems with as little friction as possible.
+
+
+-----------------------------------------------------------------------------------
+18. Build reusable components
+
+Instead of styling every button individually, create reusable styles:
+
+.button {
+    /* shared styles */
+}
+
+This keeps your design consistent.
+
+
+-----------------------------------------------------------------------------------
+19. Continue learning
+
+Web development changes over time. Learning resources, browser features, and best practices evolve, so it's helpful to keep exploring and updating your knowledge.
+
+If I could give one piece of advice
+
+Focus on mastering these in order:
+
+✅ HTML
+✅ CSS
+✅ Responsive Design
+✅ Accessibility
+✅ JavaScript
+✅ Browser Developer Tools
+✅ Git
+✅ Performance Optimization
+✅ SEO Basics
+✅ Web Security Basics
+
+These ten areas form a strong foundation for modern front-end development.
+
+A practical habit
+
+Whenever you finish a page, ask yourself these questions:
+
+Does it work on a phone?
+Can I navigate it using only the keyboard?
+Are all images given appropriate alt text?
+Is the HTML semantic?
+Does it load quickly?
+Are headings in a logical order?
+Are links and buttons clearly labeled?
+Are forms easy to complete?
+Is the code clean and organized?
+
+If you can answer "yes" to all of those, you're well on your way to 
+building websites that are functional, professional, and enjoyable to use.
+-->

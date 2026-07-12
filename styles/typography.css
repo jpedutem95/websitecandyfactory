@@ -1,0 +1,22 @@
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+p {
+    font-family: "Patrick Hand", cursive;
+}
+
+.whats-new h2,
+.shop-slider h1 {
+    font-family: "Anton", sans-serif;
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+
+
+

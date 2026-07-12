@@ -1,0 +1,153 @@
+
+/* =========================
+   HEADER
+========================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+#topMenu {
+    background: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+#topMenu .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* H1 LOGO */
+.logo h1 {
+    font-family: "Patrick Hand", cursive;
+    font-size: 28px;
+    font-weight: 400;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    letter-spacing: 1px;
+
+    /* IMPORTANT: lifts text slightly so it visually sits above curve */
+    transform: translateY(6px);
+}
+
+/* REMOVE LINK DEFAULT STYLE */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SVG LINE */
+.logo svg {
+    display: block;
+    margin-top: -2px; /* pulls line closer to text */
+}
+
+/* =========================
+   NAV MENU
+========================= */
+#topLinks ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+#topLinks a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+#topLinks a:hover {
+    color: #FD3C82;
+}
+
+/* =========================
+   ICONS
+========================= */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.icons a:hover {
+    color: #FD3C82;
+}
+
+
+/* =============
+Top Menu Language
+================ */
+.language-switcher {
+    position: relative;
+}
+
+.language-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+.language-btn:hover {
+    color: #FD3C82;
+}
+
+.language-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: white;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.language-menu.show {
+    display: block;
+}
+
+.language-menu a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: .2s;
+}
+
+.language-menu a:hover {
+    background: #FEEBF1;
+    color: #FD3C82;
+}
+

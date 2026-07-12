@@ -1,0 +1,40 @@
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    padding: 100px 0;
+}
+
+.hero .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* ================
+Left Column Shop
+=================== */
+.leftColumn {
+    flex: 1;
+}
+
+
+.highlight {
+    color: #FD3C82;
+}
+
+.leftColumn .text h1 {
+    font-family: "Anton", sans-serif;
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.leftColumn .text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+

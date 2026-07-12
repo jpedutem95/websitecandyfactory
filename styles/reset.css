@@ -1,0 +1,73 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.wrap {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   Background
+========================= */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #FEE0E9;
+    color: #333;
+    line-height: 1.5;
+
+    background-image: url("../images/candybanner.png");
+    background-repeat: no-repeat;
+    background-position: right 200px;
+    background-size: 950px auto;
+    background-attachment: fixed;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: url("../images/candyfactorycastle1.png") center/cover no-repeat;
+
+    opacity: 0.4;      /* Change this value */
+    z-index: -1;
+    background-position: left 200px;
+    background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

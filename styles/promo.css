@@ -1,0 +1,90 @@
+
+/* ================
+Right Column
+Promotion Section
+=================== */
+.rightColumn {
+    flex: 1;
+    text-align: center;
+}
+
+.rightColumn img {
+    width: 100%;
+    max-width: 450px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px;
+    background: transparent;
+}
+
+
+.slide.active {
+    display: flex;
+}
+
+.slide img {
+    width: 45%;
+    max-width: 450px;
+    border-radius: 15px;
+}
+
+.promo-text {
+    width: 55%;
+}
+
+.promo-text h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.promo-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,.05);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.prev {
+    left: 0px;
+}
+
+.next {
+    right: 0px;
+}
+
+.prev:hover,
+.next:hover {
+    background: #FD3C82;
+}
+
