@@ -37,11 +37,12 @@ BUTTON
     align-items: center;       /* Centers vertically */
     gap: 30px;
     width: 100%;
+    padding: 100px;
 }
 
 
 .store-buttons a img {
-    width: 190px;
+    width: 150px;
     height: auto;
     transition: transform .3s ease;
     cursor: pointer;
