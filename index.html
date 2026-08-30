@@ -26,6 +26,11 @@
 
 <body>
 
+<!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div class="loader"></div>
+        <p>Please wait...</p>
+    </div>
 
     <header>
         <!-- Logo and primary navigation go here -->
@@ -72,9 +77,184 @@
                     <a href="/">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    <a href="/">
-                        <i class="fa-regular fa-user"></i>
-                    </a>
+
+                    <!--Username/Password-->
+                    <div class="user-menu">
+                        <button id="userBtn" type="button">
+                            <i class="fa-regular fa-user"></i>
+                        </button>
+
+                        <div class="user-dropdown" id="userDropdown">
+                            <div id="loginForm">
+                                <h2>Welcome!</h2>
+                                <h3>Sign in to your account</h3>
+
+                                <form>
+                                    <label for="username">Username</label>
+                                    <input 
+                                        type="text" 
+                                        id="username" 
+                                        name="username"
+                                        placeholder="Enter username"
+                                    >
+
+                                    <label for="password">Password</label>
+
+                                    <!-- Password + Show/Hide -->
+                                    <div class="password-container">
+                                        <input 
+                                            type="password" 
+                                            id="password" 
+                                            name="password"
+                                            placeholder="Enter password"
+                                        >
+
+                                        <button type="button" class="togglePassword" data-target="password">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+                                    </div>
+
+                                    <button type="submit">Login</button>
+
+                                    <!--Create an Account Button-->
+                                    <button type="button" id="createAccountBtn">
+                                        Create an account
+                                    </button>
+
+                                    <!-- Forgot Password Button -->
+                                    <button type="button" id="forgotPasswordBtn">
+                                        Forgot Password?
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!--Create an Account-->
+                            <div id="createAccountForm" style="display: none;">
+                                <h2>Create an Account</h2>
+                                <h3>Sign Up for your Account</h3>
+
+                                <form>
+                                    <label for ="newUsername">Username</label>
+                                    <input 
+                                        type="text"
+                                        id="newUsername"
+                                        name="newUsername"
+                                        placeholder="Create username">
+
+                                    <label for="First name Last name">First name</label>
+                                    <input
+                                        type="firstName"
+                                        id="firstName"
+                                        name="firstName"
+                                        placeholder="Enter First name">
+
+                                    <label for="phone">Last name</label>
+                                    <input
+                                        type="lastName"
+                                        id="lastName"
+                                        name="lastName"
+                                        placeholder="Enter Last name">
+
+                                    <label for="phone">Phone</label>
+                                    <input
+                                        type="phone"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="Enter phone">
+                                    
+                                    <label for="email">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Enter email">
+                                    
+                                    <label for="newPassword">Password</label>
+                                    <div class="password-container">
+                                        <input
+                                            type="password"
+                                            id="newPassword"
+                                            name="newPassword"
+                                            placeholder="Create password">
+
+                                        <button 
+                                            type="button" 
+                                            class="togglePassword" 
+                                            data-target="newPassword">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Password Requirements -->
+                                    <div class="password-requirements">
+                                        <p>Password must contain:</p>
+                                        <ul>
+                                            <li id="lengthRequirement">At least 12 characters</li>
+                                            <li id="uppercaseRequirement">At least 1 uppercase letter</li>
+                                            <li id="numberRequirement">At least 1 number</li>
+                                            <li id="symbolRequirement">At least 1 symbol</li>
+                                        </ul>
+                                    </div>
+
+                                    <label for="confirmPassword">Confirm Password</label>
+
+                                    <div class="password-container">
+                                        <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        name="confirmPassword"
+                                        placeholder="Confirm password">
+
+                                        <button 
+                                            type="button" 
+                                            class="togglePassword" 
+                                            data-target="confirmPassword">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+                                    </div>
+
+                                    <p id="passwordMatchMessage"></p>
+
+                                    <button type="submit">
+                                        Create Account
+                                    </button>
+
+                                    <button type="button" class="backToLogin">
+                                        ← Back to Login
+                                    </button>
+                                    
+                                </form>
+                            </div>
+
+                            <!-- FORGOT PASSWORD -->
+                            <div id="forgotPasswordForm" style="display: none;">
+
+                                <h2>Forgot Password?</h2>
+                                <h3>Enter your email to reset your password</h3>
+
+                                <form>
+                                    <label for="resetEmail">Email</label>
+
+                                    <input
+                                        type="email"
+                                        id="resetEmail"
+                                        name="resetEmail"
+                                        placeholder="Enter your email"
+                                    >
+
+                                    <button type="submit">
+                                        Send Reset Link
+                                    </button>
+
+                                    <button type="button" class="backToLogin">
+                                        ← Back to Login
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+ 
+
                     <a href="/" class="cart-btn">
                         <i class="fa-solid fa-cart-shopping"></i>
                         Cart
@@ -335,8 +515,7 @@
                 </a>
             </div>
         </div>
-        
-        
+    
     </main>
 
     <footer>
