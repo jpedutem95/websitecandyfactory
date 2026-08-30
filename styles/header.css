@@ -22,6 +22,22 @@ header {
     justify-content: space-between;
 }
 
+/* ========================
+Header all Hover 
+========================= */
+#topLinks a:hover,
+.icons a:hover,
+.language-btn:hover,
+#userBtn:hover {
+    color: #FD3C82;
+}
+
+.language-menu a:hover {
+    background: #FEEBF1;
+    color: #FD3C82;
+}
+
+
 /* =========================
    LOGO
 ========================= */
@@ -76,9 +92,6 @@ header {
     transition: 0.3s ease;
 }
 
-#topLinks a:hover {
-    color: #FD3C82;
-}
 
 /* =========================
    ICONS
@@ -94,10 +107,6 @@ header {
     color: #333;
     font-size: 18px;
     transition: 0.3s ease;
-}
-
-.icons a:hover {
-    color: #FD3C82;
 }
 
 
@@ -117,14 +126,10 @@ Top Menu Language
     transition: 0.3s ease;
 }
 
-.language-btn:hover {
-    color: #FD3C82;
-}
-
 .language-menu {
     display: none;
     position: absolute;
-    top: 35px;
+    top: 100%;
     right: 0;
     background: white;
     width: 180px;
@@ -146,8 +151,169 @@ Top Menu Language
     transition: .2s;
 }
 
-.language-menu a:hover {
-    background: #FEEBF1;
+/* ==========================
+   Username / Password
+   ========================== */
+#userBtn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 250px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.user-dropdown h2,
+.user-dropdown h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.user-dropdown label {
+    display: block;
+    margin-top: 10px;
+}
+
+.user-dropdown input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.user-dropdown form > button[type="submit"] {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/*Password Show / Hide*/
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    height: 40px;
+    padding-right: 40px;
+}
+
+.togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    color: #333;
+    cursor: pointer;
+}
+
+.togglePassword:hover {
+    color: #333;
+}
+
+
+/* ==================================================
+   Create Account / Forgot Password / Back to Login
+   =================================================*/
+#createAccountBtn,
+#forgotPasswordBtn,
+.backToLogin {
+    display: block;
+    width: 100%;
+
+    background: none;
+    border: none;
+
+    color: #FD3C82;
+    cursor: pointer;
+
+    font-size: 12px;
+
+    padding: 5px;
+    margin-top: 8px;
+
+    text-align: center;
+}
+
+
+#createAccountBtn:hover,
+#forgotPasswordBtn:hover,
+.backToLogin:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================
+   Password Requirements
+   ========================== */
+.password-requirements {
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.password-requirements p {
+    margin-bottom: 5px;
+}
+
+.password-requirements ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.password-requirements li {
+    margin-bottom: 3px;
+    color: #777;
+}
+
+.password-requirements li.valid {
     color: #FD3C82;
 }
 
+/*password match*/
+#passwordMatchMessage {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#passwordMatchMessage.valid {
+    color: #333;
+}
+
+#passwordMatchMessage.invalid {
+    color: red;
+}
