@@ -1,90 +1,207 @@
+/* =========================
+   Right Column
+   Promotion Section
+========================= */
 
-/* ================
-Right Column
-Promotion Section
-=================== */
 .rightColumn {
+
     flex: 1;
     text-align: center;
+
 }
 
 .rightColumn img {
+
     width: 100%;
     max-width: 450px;
+
 }
+
+
+/* =========================
+   Slider
+========================= */
 
 .slider {
+
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
+
 }
 
-.slide {
-    display: none;
+.slides {
+
+    position: relative;
+
+}
+
+
+/* =========================
+   Slides Container
+========================= */
+
+.designPromo .slides {
+
+    min-height: 400px;
+
+}
+
+.designFeatured .slides {
+
+    min-height: 350px;
+
+}
+
+
+/* =========================
+   Slides
+========================= */
+
+.designPromo .slide,
+.designFeatured .slide {
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+
+/* =========================
+   Active Slide
+========================= */
+
+.designPromo .slide.active,
+.designFeatured .slide.active {
+
+    opacity: 1;
+    visibility: visible;
+
+}
+
+
+/* =========================
+   Promotion Slide Layout
+========================= */
+
+.designPromo .slide {
+
+    display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     gap: 50px;
+
     padding: 50px;
+
     background: transparent;
+
 }
 
 
-.slide.active {
-    display: flex;
-}
+/* =========================
+   Promotion Images
+========================= */
 
-.slide img {
+.designPromo .slide img {
+
     width: 45%;
     max-width: 450px;
+
     border-radius: 15px;
+
 }
 
+
+/* =========================
+   Promotion Text
+========================= */
+
 .promo-text {
+
     width: 55%;
+
 }
 
 .promo-text h2 {
+
     font-size: 30px;
+
     color: #333;
+
     margin-bottom: 20px;
+
 }
 
 .promo-text p {
+
     font-size: 18px;
+
     line-height: 1.6;
+
     color: #333333;
+
     margin-bottom: 25px;
+
 }
 
 
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0,0,0,.05);
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    transition: .3s;
+/* =========================
+   Promotion Slide Animation
+========================= */
+
+.designPromo .slide.active.moving-left {
+
+    animation: slideInLeft 0.5s ease-in-out forwards;
+
 }
 
-.prev {
-    left: 0px;
+.designPromo .slide.active.moving-right {
+
+    animation: slideInRight 0.5s ease-in-out forwards;
+
 }
 
-.next {
-    right: 0px;
+
+/* =========================
+   Promotion Slide Animations
+========================= */
+
+@keyframes slideInLeft {
+
+    from {
+
+        transform: translateX(100%);
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+
 }
 
-.prev:hover,
-.next:hover {
-    background: #FD3C82;
-}
 
+@keyframes slideInRight {
+
+    from {
+
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+
+}
