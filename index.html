@@ -18,19 +18,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!--Reference the javascript files-->
-    <script src="scripts/app.js" defer></script>
-    <script src="scripts/home.js" defer></script>
+    <script type="module" src="scripts/app.js"></script>
     
 
 </head>
 
 <body>
+    
 
 <!-- Loading Screen -->
     <div id="loadingScreen">
         <div class="loader"></div>
         <p>Please wait...</p>
     </div>
+
+    <!--Script Temporary already at home.js-->
+    <script>
+
+        window.addEventListener("load", function () {
+
+            const loadingScreen = document.getElementById("loadingScreen");
+
+            if (loadingScreen) {
+                loadingScreen.classList.add("hide");
+            }
+
+        });
+
+    </script>
 
     <header>
         <!-- Logo and primary navigation go here -->
@@ -90,36 +105,48 @@
                                 <h3>Sign in to your account</h3>
 
                                 <form>
-                                    <label for="username">Username</label>
-                                    <input 
-                                        type="text" 
-                                        id="username" 
-                                        name="username"
-                                        placeholder="Enter username"
-                                    >
-
-                                    <label for="password">Password</label>
+                                    <!-- Username -->
+                                    <div class="input-group">
+                                        <input 
+                                            type="text" 
+                                            id="username" 
+                                            name="username"
+                                            placeholder=""
+                                        >
+                                        <label for="username">Username</label>
+                                    </div>
 
                                     <!-- Password + Show/Hide -->
-                                    <div class="password-container">
+                                    <div class="input-group">
                                         <input 
                                             type="password" 
                                             id="password" 
                                             name="password"
-                                            placeholder="Enter password"
+                                            placeholder=""
                                         >
 
-                                        <button type="button" class="togglePassword" data-target="password">
+                                        <label for="password">Password</label>
+                                        <p id="loginErrorMessage"></p>
+
+                                        <button 
+                                            type="button" 
+                                            class="togglePassword" 
+                                            data-target="password"
+                                        >
                                             <i class="fa-regular fa-eye"></i>
                                         </button>
                                     </div>
 
                                     <button type="submit">Login</button>
 
+                                    <!-- Welcome message -->
+                                    <p id="welcomeMessage"></p>
+
                                     <!--Create an Account Button-->
                                     <button type="button" id="createAccountBtn">
                                         Create an account
                                     </button>
+
 
                                     <!-- Forgot Password Button -->
                                     <button type="button" id="forgotPasswordBtn">
@@ -134,90 +161,120 @@
                                 <h3>Sign Up for your Account</h3>
 
                                 <form>
-                                    <label for ="newUsername">Username</label>
-                                    <input 
-                                        type="text"
-                                        id="newUsername"
-                                        name="newUsername"
-                                        placeholder="Create username">
-
-                                    <label for="First name Last name">First name</label>
-                                    <input
-                                        type="firstName"
-                                        id="firstName"
-                                        name="firstName"
-                                        placeholder="Enter First name">
-
-                                    <label for="phone">Last name</label>
-                                    <input
-                                        type="lastName"
-                                        id="lastName"
-                                        name="lastName"
-                                        placeholder="Enter Last name">
-
-                                    <label for="phone">Phone</label>
-                                    <input
-                                        type="phone"
-                                        id="phone"
-                                        name="phone"
-                                        placeholder="Enter phone">
-                                    
-                                    <label for="email">Email</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        placeholder="Enter email">
-                                    
-                                    <label for="newPassword">Password</label>
-                                    <div class="password-container">
+                                    <div class="input-group">
                                         <input
-                                            type="password"
-                                            id="newPassword"
-                                            name="newPassword"
-                                            placeholder="Create password">
-
-                                        <button 
-                                            type="button" 
-                                            class="togglePassword" 
-                                            data-target="newPassword">
-                                            <i class="fa-regular fa-eye"></i>
-                                        </button>
+                                            type="text"
+                                            id="firstName"
+                                            name="firstName"
+                                            placeholder=" ">
+                                        <label for="firstName">First Name</label>
                                     </div>
 
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            id="lastName"
+                                            name="lastName"
+                                            placeholder=" ">
+                                        <label for="lastName">Last Name</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            id="Country"
+                                            name="Country"
+                                            placeholder=" ">
+                                        <label for="Country">Country</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            placeholder=" ">
+                                        <label for="phone">Phone</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            placeholder=" ">
+                                        <label for="email">Email Address</label>
+                                        <p id="emailErrorMessage"></p>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input 
+                                            type="text"
+                                            id="newUsername"
+                                            name="newUsername"
+                                            placeholder=" ">
+                                        <label for ="newUsername">Username</label>
+                                    </div>
+
+                                    <!-- Create Password  -->
+                                    <div class="input-group">
+                                        <div class="password-container">
+                                            <input
+                                                type="password"
+                                                id="newPassword"
+                                                name="newPassword"
+                                                placeholder=" ">
+                                            <label for="newPassword">Create Password</label>
+
+                                            <button 
+                                                type="button" 
+                                                class="togglePassword" 
+                                                data-target="newPassword">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
                                     <!-- Password Requirements -->
                                     <div class="password-requirements">
                                         <p>Password must contain:</p>
                                         <ul>
                                             <li id="lengthRequirement">At least 12 characters</li>
-                                            <li id="uppercaseRequirement">At least 1 uppercase letter</li>
-                                            <li id="numberRequirement">At least 1 number</li>
-                                            <li id="symbolRequirement">At least 1 symbol</li>
+                                            <li id="lowercaseRequirement">At least 1 Lower case letter (a-z)</li>
+                                            <li id="uppercaseRequirement">At least 1 Upper case letter (A-Z)</li>
+                                            <li id="numberRequirement">At least 1 Number (0-9)</li>
+                                            <li id="symbolRequirement">At least 1 Special characters (,.!@#$%^&)</li>
                                         </ul>
                                     </div>
 
-                                    <label for="confirmPassword">Confirm Password</label>
+                                    <div class="input-group">
+                                        <div class="password-container">
+                                            <input
+                                            type="password"
+                                            id="confirmPassword"
+                                            name="confirmPassword"
+                                            placeholder=" ">
+                                            <label for="confirmPassword">Confirm Password</label>
 
-                                    <div class="password-container">
-                                        <input
-                                        type="password"
-                                        id="confirmPassword"
-                                        name="confirmPassword"
-                                        placeholder="Confirm password">
+                                            <button 
+                                                type="button" 
+                                                class="togglePassword" 
+                                                data-target="confirmPassword">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <p id="passwordMatchMessage"></p>
 
-                                        <button 
-                                            type="button" 
-                                            class="togglePassword" 
-                                            data-target="confirmPassword">
-                                            <i class="fa-regular fa-eye"></i>
-                                        </button>
                                     </div>
 
-                                    <p id="passwordMatchMessage"></p>
+                                    
 
-                                    <button type="submit">
-                                        Create Account
+                                    <button type="submit" 
+                                            id="createAccountSubmit" 
+                                            disabled>
+                                            Create Account
                                     </button>
+                                    <p id="accountSuccessMessage"></p>
 
                                     <button type="button" class="backToLogin">
                                         ← Back to Login
@@ -233,16 +290,22 @@
                                 <h3>Enter your email to reset your password</h3>
 
                                 <form>
-                                    <label for="resetEmail">Email</label>
 
-                                    <input
-                                        type="email"
-                                        id="resetEmail"
-                                        name="resetEmail"
-                                        placeholder="Enter your email"
-                                    >
+                                    <div class="input-group">
+                                        
+                                        <input
+                                            type="email"
+                                            id="resetEmail"
+                                            name="resetEmail"
+                                            placeholder=" ">
+                                        <label for="resetEmail">Enter your Email Address</label>
+                                        <p id="resetEmailErrorMessage"></p>
+                                    </div>
 
-                                    <button type="submit">
+                                    <button 
+                                        type="submit" 
+                                        id="sendResetLinkBtn" 
+                                        disabled>
                                         Send Reset Link
                                     </button>
 
@@ -312,26 +375,36 @@
             
                 <!--Promotion Section-->
                 <div class="rightColumn">
-                    <section class="slider">
+                    <section class="slider designPromo"
+                             tabindex="0"
+                             aria-label="Promotion slider">
+                        <h2></h2>
                         <div class="slides">
 
                             <div class="slide active">
-                                <img src="images/promoCat1.jpg" alt="Gray Kitten">
+                                <img src="images/promoCat1.jpg" 
+                                     alt="Gray Kitten"
+                                     loading="eager">
                                 
                                 <div class="promo-text">
-                                    <h2>Buy 3 Candies, Get 1 Kitten!</h2>
+                                    <h3>Buy 3 Candies, Get 1 Kitten!</h3>
                                     <p>
                                         Buy any three candy products and receive one adorable
                                         kitten plush toy for free. <br> Limited-time promotion!
                                     </p>
 
-                                    <a href="#" class="shop-btn">Shop Now</a>
+                                    <a href="#" class="shop-btn">
+                                        Shop Now
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
                                 </div>
 
                             </div>
 
                             <div class="slide">
-                                <img src="images/promoCat2.jpg" alt="Orange Kitten">
+                                <img src="images/promoCat2.jpg" 
+                                     alt="Orange Kitten"
+                                     loading="lazy">
 
                                 <div class="promo-text">
                                     <h2>Buy 4 Candies, Get 1 Kitten!</h2>
@@ -340,13 +413,18 @@
                                         kitten plush toy for free. <br> Limited-time promotion!
                                     </p>
 
-                                    <a href="#" class="shop-btn">Shop Now</a>
+                                    <a href="#" class="shop-btn">
+                                        Shop Now
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
                                 </div>
 
                             </div>
 
                             <div class="slide">
-                                <img src="images/promoCat3.jpg" alt="Batman Kitten">
+                                <img src="images/promoCat3.jpg" 
+                                     alt="Batman Kitten"
+                                     loading="lazy">
 
                                 <div class="promo-text">
                                     <h2>Buy 5 Candies, Get 1 Kitten!</h2>
@@ -355,15 +433,34 @@
                                         kitten plush toy for free. <br> Limited-time promotion!
                                     </p>
 
-                                    <a href="#" class="shop-btn">Shop Now</a>
+                                    <a href="#" class="shop-btn">
+                                        Shop Now
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
                                 </div>
 
                             </div>
 
                         </div>
 
-                        <button class="prev">&#10094;</button>
-                        <button class="next">&#10095;</button>
+                        <button class="prev" type="button" aria-label="Previous slide">
+                            &#10094;
+                        </button>
+                        <button class="next" type="button" aria-label="Next slide">
+                            &#10095;
+                        </button>
+
+                        <div class="slider-controls">
+
+                            <nav class="pagination" aria-label="Slide navigation"></nav>
+
+                            <button class="play-pause" type="button"
+                                    aria-label="Pause slideshow"
+                                    aria-pressed="false">
+                                ⏸
+                            </button>
+
+                        </div>
 
                     </section>
                     
@@ -429,15 +526,17 @@
         </section>
 
 
-        <section class="shop-slider">
-
+        <section class="designFeatured slider"
+                 tabindex="0"
+                 aria-label="Featured products slider">
             <h2>Featured</h2>
-
-            <div class="shop-slides">
+            <div class="slides">
 
                 <!-- Shop 1 -->
-                <div class="shop-slide active left-text">
-                    <img src="images/candyshop1.jpg" alt="Fuity Gummies">
+                <div class="shopFeatured slide active left-text">
+                    <img src="images/candyshop1.jpg" 
+                         alt="Fruity Gummies"
+                         loading="lazy">
 
                     <div class="banner-content">
                         <h3>Treat Yourself to Happiness!</h3>
@@ -451,8 +550,10 @@
                 </div>
 
                 <!-- Shop 2 -->
-                <div class="shop-slide right-text">
-                    <img src="images/candyshop2.jpg" alt="Chocolates">
+                <div class="shopFeatured slide right-text">
+                    <img src="images/candyshop2.jpg" 
+                         alt="Chocolates"
+                         loading="lazy">
 
                     <div class="banner-content">
                         <h3>Life is Sweet, Make it Chocolate</h3>
@@ -466,8 +567,10 @@
                 </div>
 
                 <!-- Shop 3 -->
-                <div class="shop-slide left-text">
-                    <img src="images/candyshop3.jpg" alt="Lollipops and Gummies">
+                <div class="shopFeatured slide left-text">
+                    <img src="images/candyshop3.jpg" 
+                         alt="Lollipops and Gummies"
+                         loading="lazy">
 
                     <div class="banner-content">
                         <h3>Candy for Every Mood!</h3>
@@ -481,8 +584,10 @@
                 </div>
 
                 <!-- Shop 4 -->
-                <div class="shop-slide right-text">
-                    <img src="images/candyshop4.jpg" alt="Candies and Mallows">
+                <div class="shopFeatured slide right-text">
+                    <img src="images/candyshop4.jpg" 
+                         alt="Candies and Mallows"
+                         loading="lazy">
 
                     <div class="banner-content">
                         <h3>Perfect Gifts for Every Occasion</h3>
@@ -497,8 +602,24 @@
 
             </div>
 
-            <button class="shop-prev">&#10094;</button>
-            <button class="shop-next">&#10095;</button>
+            <button class="prev" type="button" aria-label="Previous slide">
+                &#10094;
+            </button>
+            <button class="next" type="button" aria-label="Next slide">
+                &#10095;
+            </button>
+
+            <div class="slider-controls">
+
+                <nav class="pagination" aria-label="Slide navigation"></nav>
+
+                <button class="play-pause" type="button"
+                        aria-label="Pause slideshow"
+                        aria-pressed="false">
+                    ⏸
+                </button>
+
+            </div>
 
         </section>
 
@@ -604,3 +725,5 @@
 
 
 </html>
+
+
