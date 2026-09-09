@@ -189,11 +189,6 @@ Top Menu Language
     text-align: center;
 }
 
-.user-dropdown label {
-    display: block;
-    margin-top: 10px;
-}
-
 .user-dropdown input {
     width: 100%;
     padding: 8px;
@@ -250,6 +245,53 @@ Top Menu Language
 /* ==================================================
    Create Account / Forgot Password / Back to Login
    =================================================*/
+#welcomeMessage {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    color: #FD3C82;
+    font-size: 16px;
+}
+
+#accountSuccessMessage {
+    margin-top: 10px;
+    text-align: center;
+    color: #FD3C82;
+    font-size: 14px;
+}
+
+#createAccountSubmit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#createAccountSubmit:not(:disabled) {
+    cursor: pointer;
+}
+
+#loginErrorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#emailErrorMessage {
+    font-size: 12px;
+    margin-top: 5px;
+    color: red;
+}
+
+#resetEmailErrorMessage {
+    font-size: 12px;
+    margin-top: 5px;
+    color: red;
+}
+
+#sendResetLinkBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 #createAccountBtn,
 #forgotPasswordBtn,
 .backToLogin {
@@ -282,8 +324,13 @@ Top Menu Language
    Password Requirements
    ========================== */
 .password-requirements {
+    display: none;
     margin-top: 8px;
     font-size: 12px;
+}
+
+.password-requirements.show {
+    display: block;
 }
 
 .password-requirements p {
@@ -316,4 +363,64 @@ Top Menu Language
 
 #passwordMatchMessage.invalid {
     color: red;
+}
+
+/* ==========================
+   Floating Labels
+========================== */
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 45px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+}
+
+/* Label inside input */
+.input-group label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    padding: 0 4px;
+
+    color: #777;
+    background: white;
+
+    font-size: 14px;
+
+    pointer-events: none;
+
+    transition: 0.25s ease;
+}
+
+/* Focus */
+.input-group input:focus {
+    border-color: #FD3C82;
+}
+
+/* Float label when focused */
+.input-group input:focus + label,
+
+/* Keep label floated when text exists */
+.input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 6px;
+
+    transform: translateY(-50%);
+
+    font-size: 12px;
+    color: #FD3C82;
 }
