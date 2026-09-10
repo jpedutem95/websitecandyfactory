@@ -25,6 +25,7 @@
 .slider {
 
     position: relative;
+    z-index: 1;
 
 }
 
