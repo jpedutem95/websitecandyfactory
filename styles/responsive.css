@@ -40,6 +40,10 @@
 /* promotion mobile image top, text below */
 @media (max-width: 768px) {
 
+    .designPromo {
+        min-height: 750px;
+    }
+
     .designPromo .slide {
         display: flex;
         flex-direction: column;
@@ -54,9 +58,9 @@
 
     .designPromo .promo-text {
         width: 100%;
-        text-align: center;
         padding: 20px;
         box-sizing: border-box;
+        text-align: center;
     }
 
 }
