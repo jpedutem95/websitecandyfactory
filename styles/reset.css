@@ -11,6 +11,7 @@
    WRAPPER
 ========================= */
 .wrap {
+    display: flex;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -113,9 +114,4 @@ AboutUS OurStory Careers
         transform: rotate(360deg);
     }
 }
-
-
-
-
-
 
