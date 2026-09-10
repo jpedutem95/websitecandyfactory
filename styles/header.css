@@ -109,6 +109,33 @@ Header all Hover
     transition: 0.3s ease;
 }
 
+/* Dropdown*/
+.close-user-dropdown {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    margin-left: auto;
+
+    border: none;
+    border-radius: 50%;
+
+    background: none;
+
+    color: #333;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.close-user-dropdown:hover {
+    color: #FD3C82;
+}
 
 /* =============
 Top Menu Language
@@ -128,36 +155,23 @@ Top Menu Language
 
 .language-menu {
     display: none;
-
     position: absolute;
-
     top: 100%;
     right: 0;
 
     background: white;
-
     width: 180px;
 
-    max-height: 300px;
+    max-height: 500px;
     overflow-y: auto;
+    overflow-x: hidden;
 
     border-radius: 10px;
-
     box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
 
     z-index: 1000;
 }
 
-/* mobile swipe vertically */
-@media (max-width: 768px) {
-
-    .language-menu {
-        max-height: 250px;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-}
 
 .language-menu.show {
     display: block;
