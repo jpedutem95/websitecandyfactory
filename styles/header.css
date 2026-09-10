@@ -128,15 +128,35 @@ Top Menu Language
 
 .language-menu {
     display: none;
+
     position: absolute;
+
     top: 100%;
     right: 0;
+
     background: white;
+
     width: 180px;
+
+    max-height: 300px;
+    overflow-y: auto;
+
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.15);
-    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+
     z-index: 1000;
+}
+
+/* mobile swipe vertically */
+@media (max-width: 768px) {
+
+    .language-menu {
+        max-height: 250px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
 }
 
 .language-menu.show {
