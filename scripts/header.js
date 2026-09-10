@@ -20,6 +20,18 @@ function closeAllDropdowns() {
     }
 }
 
+const closeUserDropdown =
+    document.getElementById("closeUserDropdown");
+
+if (closeUserDropdown && userDropdown) {
+
+    closeUserDropdown.addEventListener("click", function () {
+
+        userDropdown.classList.remove("show");
+
+    });
+
+}
 
 // Language Menu
 if (languageBtn && languageMenu) {
