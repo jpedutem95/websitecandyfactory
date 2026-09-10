@@ -2,6 +2,86 @@
    RESPONSIVE
 ========================= */
 
+@media (max-width: 768px) {
+
+    .user-dropdown {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100dvh;
+
+        padding: 30px;
+        box-sizing: border-box;
+
+        border-radius: 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        z-index: 2000;
+    }
+
+}
+
+
+/* =========================
+   Promotion Slide Animations
+========================= */
+
+@keyframes slideInLeft {
+
+    from {
+
+        transform: translateX(100%);
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes slideInRight {
+
+    from {
+
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+
+}
+
+/* appears column */
+@media (max-width: 768px) {
+
+    .two-column {
+        flex-direction: column;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        width: 100%;
+    }
+
+}
+
 
 /* =========================
    Main .Wrap
