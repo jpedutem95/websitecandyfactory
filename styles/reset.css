@@ -19,17 +19,8 @@
 
 /* =========================
    Background
-========================= */
 
-body {
-    background: #FEE0E9;
-    background-attachment: fixed;
-    font-family: "Open Sans", sans-serif;
-    color: #333;
-    line-height: 1.5;
-}
-
-body::before {
+   body::before {
     content: "";
     position: fixed;
     inset: 0;
@@ -43,6 +34,17 @@ body::before {
     z-index: -1;
     pointer-events: none;
 }
+
+========================= */
+
+body {
+    background: #FEE0E9;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
 
 /* =====================
 AboutUS OurStory Careers
