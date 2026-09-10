@@ -7,6 +7,9 @@
     padding: 80px 0;
 }
 
+.whats-new .wrap {
+    flex-direction: column;
+}
 
 .cards {
     display: grid;
@@ -45,5 +48,6 @@
     margin-bottom: 20px;
     line-height: 1.6;
 }
+
 
 
