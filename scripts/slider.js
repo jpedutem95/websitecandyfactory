@@ -24,6 +24,9 @@ function createSlider(slider) {
     const pagination = slider.querySelector(".pagination");
     const playPauseBtn = slider.querySelector(".play-pause");
 
+    // Slide duration in milliseconds
+    const slideDuration = 5000;
+
     // Stop if no slides exist
     if (!slides.length) {
         return;
@@ -52,8 +55,76 @@ function createSlider(slider) {
         return !isHovering && isVisible && !isManuallyPaused;
     }
 
+    
+    // ==========================
+    // Pagination Dot Timer
+    // ==========================
 
+    function startDotTimer() {
+
+        if (!pagination) {
+            return;
+        }
+
+        const dots = pagination.querySelectorAll(".dot");
+
+        dots.forEach(function (dot, index) {
+
+            const progress = dot.querySelector(".dot-progress");
+
+            if (!progress) {
+                return;
+            }
+
+            // Reset every dot.
+            progress.style.transition = "none";
+            progress.style.width = "0%";
+
+            // Animate only the active dot.
+            if (index === current) {
+
+                // Allow the browser to apply the reset first.
+                progress.offsetWidth;
+
+                progress.style.transition =
+                    `width ${slideDuration}ms linear`;
+
+                progress.style.width = "100%";
+
+            }
+
+        });
+
+    }
+
+
+    // Reset all dot timers.
+    function resetDotTimer() {
+
+        if (!pagination) {
+            return;
+        }
+
+        const dots = pagination.querySelectorAll(".dot");
+
+        dots.forEach(function (dot) {
+
+            const progress = dot.querySelector(".dot-progress");
+
+            if (progress) {
+                progress.style.transition = "none";
+                progress.style.width = "0%";
+            }
+
+        });
+
+    }
+
+
+    // ==========================
     // Automatic Slide Control
+    // ==========================
+
     function startAutoSlide() {
 
         // Do not start if automatic sliding is not allowed
@@ -61,13 +132,18 @@ function createSlider(slider) {
             return;
         }
 
+        // Clear the previous timer
         clearInterval(slideInterval);
 
+        // Start the progress bar
+        startDotTimer();
+
+        // Start the slideshow timer
         slideInterval = setInterval(function () {
 
-            // Don't change slides unless automatic sliding is allowed
             if (!shouldAutoSlide()) {
                 clearInterval(slideInterval);
+                resetProgress();
                 return;
             }
 
@@ -79,7 +155,11 @@ function createSlider(slider) {
 
             showSlide(current, "next");
 
-        }, 5000);
+            // Restart the dot timer for the next slide.
+            startDotTimer();
+
+        }, slideDuration);
+
     }
     
 
@@ -139,6 +219,13 @@ function createSlider(slider) {
 
             // prevents accidental form submission
             dot.type = "button";
+
+            // Create the timer inside the dot.
+            const progress = document.createElement("span");
+
+            progress.classList.add("dot-progress");
+
+            dot.appendChild(progress);
 
             // improves accessibility
             dot.setAttribute(
